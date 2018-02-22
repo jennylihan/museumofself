@@ -43,7 +43,7 @@ export default class SampleContentScreen extends React.Component {
     const newCount = count + 1;
 
     const { navigate } = this.props.navigation;
-    navigate('SampleContentScreen', { title: 'Another Screen', text: 'This is another simple screen!', count: newCount, color: Colors.midnightBlue });
+    navigate('SampleContentScreen', { title: 'Curate', text: 'Wait for it - coming soon! This will allow you to edit exhibits', count: newCount, color: Colors.midnightBlue });
   }
 
   render() {

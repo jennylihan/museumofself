@@ -8,28 +8,6 @@ export default class ShowcaseScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
      const { params = {} } = navigation.state;
-
-     const headerRight = <Button
-                             title="Add"
-                             onPress={params.handleAdd ? params.handleAdd : () => null} />;
-
-     const tabBarOptions = {
-       tabBarLabel: '1st!',
-       tabBarIcon: ({ tintColor }) => (
-         <MaterialIcons
-           name='mood'
-           color={tintColor}
-           size={Metrics.icons.small}
-         />
-       ),
-     }
-
-     const result = {
-       ...tabBarOptions,
-       headerRight: headerRight,
-     }
-
-     return result;
   };
 
   componentDidMount() {
@@ -49,7 +27,7 @@ export default class ShowcaseScreen extends React.Component {
   render() {
 
     const { params = {} } = this.props.navigation.state;
-    const { text = "I AM A SHOWCASE SCREEN", count = 1, color = Colors.fire } = params;
+    const { text = "I AM A SHOWCASE", count = 1, color = Colors.fire } = params;
 
     return (
       <View style={[ styles.container, { backgroundColor: color } ]}>
