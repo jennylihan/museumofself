@@ -63,7 +63,7 @@ export default class CaptureScreen extends React.Component {
   render() {
 
     const { params = {} } = this.props.navigation.state;
-    const { text = "CAPTURE", count = 1, color = Colors.white} = params;
+    const { text = "CAPTURE", color = Colors.white} = params;
 
     return (
       <View style={[ styles.container, { backgroundColor: color } ]}>

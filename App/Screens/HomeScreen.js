@@ -34,8 +34,6 @@ export default class HomeScreen extends React.Component {
 
   _handleAdd = () => {
     const { params = {} } = this.props.navigation.state;
-    const { count = 1 } = params;
-    const newCount = count + 1;
 
     const { navigate } = this.props.navigation;
     navigate('CreateContentScreenStep2', { title: 'Another Screen', text: 'This is another simple screen!', count: newCount, color: Colors.midnightBlue });
@@ -43,8 +41,6 @@ export default class HomeScreen extends React.Component {
 
   _handleShowcase = () => {
     const { params = {} } = this.props.navigation.state;
-    const { count = 1 } = params;
-    const newCount = count + 1;
 
     const { navigate } = this.props.navigation;
     navigate('ShowcaseScreen');
@@ -52,8 +48,6 @@ export default class HomeScreen extends React.Component {
 
   _handleCapture = () => {
     const { params = {} } = this.props.navigation.state;
-    const { count = 1 } = params;
-    const newCount = count + 1;
 
     const { navigate } = this.props.navigation;
     navigate('CaptureScreen');
@@ -62,12 +56,11 @@ export default class HomeScreen extends React.Component {
   render() {
 
     const { params = {} } = this.props.navigation.state;
-    const { text = "", count = 1, color = Colors.white } = params;
+    const { text = "", color = Colors.white } = params;
 
     return (
       <View style={[ styles.container, { backgroundColor: color } ]}>
         <Text style={styles.text}>{text}</Text>
-        <Text style={styles.text}>{count}</Text>
         <Button title="Create"
           onPress={params.handleCapture ? params.handleCapture : () => null}/>
         <Button title="Curate"
