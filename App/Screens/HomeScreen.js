@@ -36,7 +36,7 @@ export default class HomeScreen extends React.Component {
     const { params = {} } = this.props.navigation.state;
 
     const { navigate } = this.props.navigation;
-    navigate('CreateContentScreenStep2', { title: 'Another Screen', text: 'This is another simple screen!', count: newCount, color: Colors.midnightBlue });
+    navigate('CreateContentScreenStep2', { title: 'Another Screen', text: 'This is another simple screen!', color: Colors.midnightBlue });
   }
 
   _handleShowcase = () => {
