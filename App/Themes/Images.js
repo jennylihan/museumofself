@@ -8,7 +8,9 @@ const images = {
   picture: require('../Images/image_background.png'),
   wireframeBlank: require('../Images/wireframe_elements.png'),
   wireframeFull: require('../Images/wireframe_elements_filled.png'),
-  wireframeCode: require('../Images/wireframe_code.png')
+  wireframeCode: require('../Images/wireframe_code.png'),
+  SakiTimeline: require('../Images/SakiTimeline.png'),
+  photoicon: require('../Images/photo-icon.png'),
 }
 
 export default images
