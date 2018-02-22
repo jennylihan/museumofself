@@ -38,38 +38,41 @@ export default class HomeScreen extends React.Component {
 
   componentDidMount() {
     console.log(JSON.stringify(this.props.navigation));
-    this.props.navigation.setParams({handleAdd: this._handleAdd, handleShowcase: this._handleShowcase});
+    this.props.navigation.setParams({handleAdd: this._handleAdd, handleShowcase: this._handleShowcase, handleCapture: this._handleCapture});
   }
 
   _handleAdd = () => {
     const { params = {} } = this.props.navigation.state;
-    const { count = 1 } = params;
-    const newCount = count + 1;
 
     const { navigate } = this.props.navigation;
-    navigate('CreateContentScreenStep2', { title: 'Another Screen', text: 'This is another simple screen!', count: newCount, color: Colors.midnightBlue });
+    navigate('CreateContentScreenStep2', { title: 'Another Screen', text: 'This is another simple screen!', color: Colors.midnightBlue });
   }
 
   _handleShowcase = () => {
     const { params = {} } = this.props.navigation.state;
-    const { count = 1 } = params;
-    const newCount = count + 1;
 
     const { navigate } = this.props.navigation;
     navigate('ShowcaseScreen');
   }
 
+  _handleCapture = () => {
+    const { params = {} } = this.props.navigation.state;
+
+    const { navigate } = this.props.navigation;
+    navigate('CaptureScreen');
+  }
+
   render() {
 
     const { params = {} } = this.props.navigation.state;
-    const { text = "", count = 1, color = Colors.white } = params;
+    const { text = "", color = Colors.white } = params;
 
     return (
       <View style={[ styles.container, { backgroundColor: color } ]}>
         <Text style={styles.text}>{text}</Text>
 
           <Button large title="Create"
-           onPress={params.handleAdd ? params.handleAdd : () => null}
+           onPress={params.handleCapture ? params.handleCapture : () => null}
            containerViewStyle={{width: '75%', marginLeft: 10, marginRight: 10}}
            buttonStyle={{backgroundColor: '#3CE9F6', borderRadius: 10}}/>
           <View style={styles.button}>

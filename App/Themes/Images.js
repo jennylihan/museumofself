@@ -5,6 +5,7 @@ const images = {
   jedi3: require('../Images/3.png'),
   jedi4: require('../Images/4.png'),
   phone: require('../Images/smartphone.png'),
+  saki: require('../Images/saki.jpg'),
   picture: require('../Images/image_background.png'),
   wireframeBlank: require('../Images/wireframe_elements.png'),
   wireframeFull: require('../Images/wireframe_elements_filled.png'),

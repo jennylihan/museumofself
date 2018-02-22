@@ -39,8 +39,6 @@ export default class CreateContentScreenStep2 extends React.Component {
 
   _handleAdd = () => {
     const { params = {} } = this.props.navigation.state;
-    const { count = 1 } = params;
-    const newCount = count + 1;
 
     const { navigate } = this.props.navigation;
     navigate('PickerScreen');
@@ -49,12 +47,11 @@ export default class CreateContentScreenStep2 extends React.Component {
   render() {
 
     const { params = {} } = this.props.navigation.state;
-    const { text = "And the select exhibit stuff here?", count = 1, color = Colors.fire } = params;
+    const { text = "And the select exhibit stuff here?",  color = Colors.fire } = params;
 
     return (
       <View style={[ styles.container, { backgroundColor: color } ]}>
         <Text style={styles.text}>{text}</Text>
-        <Text style={styles.text}>{count}</Text>
       </View>
     );
 
