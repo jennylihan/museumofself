@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { Card } from 'react-native-elements';
 
 import { MaterialIcons } from '@expo/vector-icons'
 import { Images, Colors, Metrics } from '../Themes'
@@ -32,6 +33,15 @@ export default class ArtifactScreen extends React.Component {
       <View style={[ styles.container, { backgroundColor: color } ]}>
         <Text style={styles.text}>{text}</Text>
         <Text style={styles.text}>{count}</Text>
+        <Card title="CARD WITH DIVIDER">
+            <Image
+              style={styles.image}
+              resizeMode="cover"
+              source={Images.jedi1}
+            />
+            <Text>Saki</Text>
+        </Card>
+
       </View>
     );
 
