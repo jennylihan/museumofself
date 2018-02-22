@@ -1,2 +1,0 @@
-# museumofself
-BBA Interface Design
