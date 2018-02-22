@@ -19,7 +19,7 @@ const PrimaryNav = StackNavigator({
   initialRouteName: 'HomeScreen',
   navigationOptions: ({navigation}) => {
 
-    let navTitle = 'Welcome'
+    let navTitle = 'Back'
     if (navigation.state.params) {
       navTitle = navigation.state.params.title || navTitle;
     }

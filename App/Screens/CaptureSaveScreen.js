@@ -1,5 +1,6 @@
 import React from 'react';
-import { Dimensions, ScrollView, Share, StyleSheet, Text, TextInput, View, Image, Button } from 'react-native';
+import { Dimensions, ScrollView, Share, StyleSheet, Text, TextInput, View, Image } from 'react-native';
+import {Button} from 'react-native-elements';
 
 import { MaterialIcons } from '@expo/vector-icons'
 import { Images, Colors, Metrics } from '../Themes'
@@ -60,7 +61,7 @@ export default class CaptureSaveScreen extends React.Component {
   render() {
 
     const { params = {} } = this.props.navigation.state;
-    const { text = "CAPTURE", count = 1, color = Colors.fire } = params;
+    const { text = "CAPTURE", count = 1, color = Colors.white} = params;
 
     return (
       <View style={[ styles.container, { backgroundColor: color } ]}>
@@ -73,12 +74,7 @@ export default class CaptureSaveScreen extends React.Component {
             source={Images.saki}
             style={{ height: size, width: size }}
           />
-          <Text style={[styles.memeText, { top: 5 }]}>
-            {this.state.topText}
-          </Text>
-          <Text style={[styles.memeText, { bottom: 5 }]}>
-            {this.state.bottomText}
-          </Text>
+          <Text></Text>
         </View>
         
         <TextInput
@@ -87,7 +83,15 @@ export default class CaptureSaveScreen extends React.Component {
           style={{ width: 200, height: 44, padding: 8, borderWidth: 1, borderColor: '#ccc' }}
         />
 
-        <Button title="Save" onPress={this._saveAndReturn} />
+        <View style={styles.button}>
+        </View>
+
+        <Button title="Save" 
+          onPress={this._saveAndReturn}
+          containerViewStyle={{width: '75%', marginLeft: 10, marginRight: 10}}
+          buttonStyle={{backgroundColor: '#000000', borderRadius: 10}} 
+        />
+
       </View>
     );
 
@@ -96,6 +100,11 @@ export default class CaptureSaveScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    padding: 5,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   container: {
     flex: 1,
     alignItems: 'center',
