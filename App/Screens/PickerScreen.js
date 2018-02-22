@@ -39,13 +39,12 @@ export default class PickerScreen extends React.Component {
       <View style={styles.container}>
         <Image style={styles.phoneImage}
           source={Images.phone} />
-        <Text style={styles.descText}>Tips & tricks for the basic implementation of three navigators: </Text>
+        <Text style={styles.descText}>Welcome to the Museum of the Self </Text>
 
-        <Button title="Stack Navigator"
+        <Button title="Create"
           onPress={() => this.onNavigationTypeRequested(NavigatorTypes.stack)}/>
-        <Button title="Tab Navigator"
-          onPress={() => this.onNavigationTypeRequested(NavigatorTypes.tab)}/>
-        <Button title="Drawer Navigator"
+        <Button title="Curate"/>
+        <Button title="Showcase"
           onPress={() => this.onNavigationTypeRequested(NavigatorTypes.drawer)}/>
 
       </View>

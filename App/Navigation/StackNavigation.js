@@ -1,17 +1,20 @@
 import { StackNavigator } from 'react-navigation'
 
-import SampleContentScreen from '../Screens/SampleContentScreen'
+import CreateContentScreen from '../Screens/CreateContentScreen'
+import CreateContentScreenStep2 from '../Screens/CreateContentScreenStep2'
+import PickerScreen from '../Screens/PickerScreen'
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
-  SampleContentScreen: { screen: SampleContentScreen },
+  CreateContentScreen: { screen: CreateContentScreen},
+  CreateContentScreenStep2: {screen: CreateContentScreenStep2}
 }, {
   // Default config for all screens
   headerMode: 'float',
-  initialRouteName: 'SampleContentScreen',
+  initialRouteName: 'CreateContentScreen',
   navigationOptions: ({navigation}) => {
 
-    let navTitle = 'Sample Content'
+    let navTitle = 'Create Content'
     if (navigation.state.params) {
       navTitle = navigation.state.params.title || navTitle;
     }

@@ -49,7 +49,7 @@ export default class SampleContentScreen extends React.Component {
   render() {
 
     const { params = {} } = this.props.navigation.state;
-    const { text = "This is a simple screen!", count = 1, color = Colors.fire } = params;
+    const { text = "Sample!", count = 1, color = Colors.fire } = params;
 
     return (
       <View style={[ styles.container, { backgroundColor: color } ]}>

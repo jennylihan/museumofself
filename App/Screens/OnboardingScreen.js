@@ -26,8 +26,8 @@ export default class OnboardingScreen extends React.Component {
           pages={[
             {
               backgroundColor: '#fff',
-              image: <Image style={styles.contentImage} source={Images.phone} />,
-              title: 'Navigation is fun!',
+              image: <Image style={styles.contentImage} source={Images.smartphone} />,
+              title: 'Welcome to the Museum of the Self!',
               subtitle: 'In this demo, you will get to see different navigators in action.',
             },
             {
