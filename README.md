@@ -7,5 +7,5 @@ their museum.
 
 # Acknowledgements
 Starter code was taken from CS 47SI.STANFORD.EDU
+Icons from BirVa Mehta from the Noun Project
 Sample code for interfacing with the phone camera via Expo: https://snack.expo.io/r1Fi-E8n-
-
