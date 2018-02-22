@@ -9,10 +9,6 @@ export default class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
      const { params = {} } = navigation.state;
 
-     const headerRight = <Button
-                             title="Add"
-                             onPress={params.handleAdd ? params.handleAdd : () => null} />;
-
      const tabBarOptions = {
        tabBarLabel: '1st!',
        tabBarIcon: ({ tintColor }) => (
@@ -26,7 +22,6 @@ export default class HomeScreen extends React.Component {
 
      const result = {
        ...tabBarOptions,
-       headerRight: headerRight,
      }
 
      return result;
@@ -34,7 +29,7 @@ export default class HomeScreen extends React.Component {
 
   componentDidMount() {
     console.log(JSON.stringify(this.props.navigation));
-    this.props.navigation.setParams({handleAdd: this._handleAdd});
+    this.props.navigation.setParams({handleAdd: this._handleAdd, handleShowcase: this._handleShowcase});
   }
 
   _handleAdd = () => {
@@ -44,6 +39,15 @@ export default class HomeScreen extends React.Component {
 
     const { navigate } = this.props.navigation;
     navigate('CreateContentScreenStep2', { title: 'Another Screen', text: 'This is another simple screen!', count: newCount, color: Colors.midnightBlue });
+  }
+
+  _handleShowcase = () => {
+    const { params = {} } = this.props.navigation.state;
+    const { count = 1 } = params;
+    const newCount = count + 1;
+
+    const { navigate } = this.props.navigation;
+    navigate('ShowcaseScreen');
   }
 
   render() {
@@ -59,8 +63,8 @@ export default class HomeScreen extends React.Component {
           onPress={params.handleAdd ? params.handleAdd : () => null}/>
         <Button title="Curate"
             onPress={params.handleAdd ? params.handleAdd : () => null}/>
-        <Button title="ShowCase"
-            onPress={params.handleAdd ? params.handleAdd : () => null}/>
+        <Button title="Showcase"
+            onPress={params.handleShowcase ? params.handleShowcase : () => null}/>
       </View>
     );
 
