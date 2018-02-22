@@ -58,7 +58,7 @@ export default class ShowcaseScreen extends React.Component {
          <View style={{position:"absolute",flex:1,left:215,top:300}}>
             <TouchableOpacity style={styles.CircleShapeView} onPress={() => {
               const { navigate } = this.props.navigation;
-              navigate('StarWarsScreen');
+              navigate('ArtifactScreen');
             }}>
             <Image source={Images.photoicon} style={{resizeMode:'cover',width:45,height:45}}>
             </Image>
@@ -90,6 +90,6 @@ const styles = StyleSheet.create({
       //resizeMode: 'stretch', // or 'stretch'
   },
   text: {
-    color: Colors.snow
+    color: Colors.black
   }
 });

@@ -52,14 +52,14 @@ export default class HomeScreen extends React.Component {
     const { params = {} } = this.props.navigation.state;
 
     const { navigate } = this.props.navigation;
-    navigate('ShowcaseScreen');
+    navigate('ShowcaseScreen', { title: 'Showcase'});
   }
 
   _handleCapture = () => {
     const { params = {} } = this.props.navigation.state;
 
     const { navigate } = this.props.navigation;
-    navigate('CaptureScreen');
+    navigate('CaptureScreen', {title: 'Capture'});
   }
 
   render() {
