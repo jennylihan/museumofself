@@ -10,7 +10,8 @@ let size = width;
 
 export default class CaptureSaveScreen extends React.Component {
   state = {
-    inputValue: '[TITLE]',
+    inputValue: 'Enter artifact title',
+    exhibitValue: 'Which exhibit?',
     imgUri: '',
     topText: '',
     bottomText: '',
@@ -19,37 +20,18 @@ export default class CaptureSaveScreen extends React.Component {
   _handleTextChange = inputValue => {
     this.setState({ inputValue });
   };
+
+  _handleExhibitChange = inputValue => {
+    this.setState({ inputValue });
+  };
   
   static navigationOptions = ({ navigation }) => {
      const { params = {} } = navigation.state;
-
-     const tabBarOptions = {
-       tabBarLabel: 'WHAT IS THIS',
-       tabBarIcon: ({ tintColor }) => (
-         <MaterialIcons
-           name='mood'
-           color={tintColor}
-           size={Metrics.icons.small}
-         />
-       ),
-     }
-
-     const result = {
-       ...tabBarOptions,
-     }
-
-     return result;
   };
 
   componentDidMount() {
     console.log(JSON.stringify(this.props.navigation));
-    this.props.navigation.setParams({handleAdd: this._handleAdd});
-  }
-
-  _handleAdd = () => {
-    const { params = {} } = this.props.navigation.state;
-    const { navigate } = this.props.navigation;
-    navigate('PickerScreen');
+    this.props.navigation.setParams({});
   }
 
   _saveAndReturn = () => {
@@ -71,7 +53,7 @@ export default class CaptureSaveScreen extends React.Component {
             this._picView= ref;
           }}>
           <Image
-            source={Images.saki}
+            source={Images.saki} //TODO: Get this img from previous screen
             style={{ height: size, width: size }}
           />
           <Text></Text>
@@ -82,11 +64,17 @@ export default class CaptureSaveScreen extends React.Component {
           onChangeText={this._handleTextChange}
           style={{ width: 200, height: 44, padding: 8, borderWidth: 1, borderColor: '#ccc' }}
         />
+        <Text></Text>
+        <TextInput
+          value={this.state.exhibitValue}
+          onChangeText={this._handleExhibitChange}
+          style={{ width: 200, height: 44, padding: 8, borderWidth: 1, borderColor: '#ccc' }}
+        />
 
         <View style={styles.button}>
         </View>
 
-        <Button title="Save" 
+        <Button title="Store artifact" 
           onPress={this._saveAndReturn}
           containerViewStyle={{width: '75%', marginLeft: 10, marginRight: 10}}
           buttonStyle={{backgroundColor: '#000000', borderRadius: 10}} 

@@ -23,34 +23,11 @@ export default class CaptureScreen extends React.Component {
   
   static navigationOptions = ({ navigation }) => {
      const { params = {} } = navigation.state;
-
-     const tabBarOptions = {
-       tabBarLabel: 'WHAT IS THIS',
-       tabBarIcon: ({ tintColor }) => (
-         <MaterialIcons
-           name='mood'
-           color={tintColor}
-           size={Metrics.icons.small}
-         />
-       ),
-     }
-
-     const result = {
-       ...tabBarOptions,
-     }
-
-     return result;
   };
 
   componentDidMount() {
     console.log(JSON.stringify(this.props.navigation));
-    this.props.navigation.setParams({handleAdd: this._handleAdd, saveArtifact: this._saveArtifact});
-  }
-
-  _handleAdd = () => {
-    const { params = {} } = this.props.navigation.state;
-    const { navigate } = this.props.navigation;
-    navigate('PickerScreen');
+    this.props.navigation.setParams({saveArtifact: this._saveArtifact});
   }
 
   _saveArtifact = () => {
