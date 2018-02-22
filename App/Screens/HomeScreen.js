@@ -1,10 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { StyleSheet, TextInput, Text, View, Image} from 'react-native';
+import {Button} from 'react-native-elements';
 
 import { MaterialIcons } from '@expo/vector-icons'
 import { Images, Colors, Metrics } from '../Themes'
 
 export default class HomeScreen extends React.Component {
+  state = {
+    inputValue: 'You can change me!',
+  };
+
+  _handleTextChange = inputValue => {
+    this.setState({ inputValue });
+  };
+
 
   static navigationOptions = ({ navigation }) => {
      const { params = {} } = navigation.state;
@@ -61,12 +70,26 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={[ styles.container, { backgroundColor: color } ]}>
         <Text style={styles.text}>{text}</Text>
-        <Button title="Create"
-          onPress={params.handleCapture ? params.handleCapture : () => null}/>
-        <Button title="Curate"
-          onPress={params.handleAdd ? params.handleAdd : () => null}/>
-        <Button title="Showcase"
-          onPress={params.handleShowcase ? params.handleShowcase : () => null}/>
+
+          <Button large title="Create"
+           onPress={params.handleCapture ? params.handleCapture : () => null}
+           containerViewStyle={{width: '75%', marginLeft: 10, marginRight: 10}}
+           buttonStyle={{backgroundColor: '#3CE9F6', borderRadius: 10}}/>
+          <View style={styles.button}>
+          </View>
+
+          <Button large title="Curate"
+            onPress={params.handleAdd ? params.handleAdd : () => null}
+            containerViewStyle={{width: '75%', marginLeft: 10, marginRight: 10}}
+            buttonStyle={{backgroundColor: '#00b3d9', borderRadius: 10}}/>
+
+          <View style={styles.button}>
+          </View>
+
+          <Button large title="Showcase"
+              onPress={params.handleShowcase ? params.handleShowcase : () => null}
+              containerViewStyle={{width: '75%', marginLeft: 10, marginRight: 10}}
+              buttonStyle={{backgroundColor: '#046A9D', borderRadius: 10}}/>
       </View>
     );
 
@@ -76,6 +99,11 @@ export default class HomeScreen extends React.Component {
 
 
 const styles = StyleSheet.create({
+  button: {
+    padding: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   container: {
     flex: 1,
     alignItems: 'center',
